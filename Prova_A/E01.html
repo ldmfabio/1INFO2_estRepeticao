@@ -7,11 +7,36 @@
     */
 
     //Entrada
-
+    const pessoas = 20;
 
     //Processamento
+    let quantidadeHomens = 0;
+    let quantidadeMulheres = 0;
+    let somaIdadeHomens = 0;
+    let somaIdadeMulheres = 0;
 
+    for (let contador = 1; contador <= pessoas; contador = contador + 1) {
+        const genero = prompt(`Qual o gênero da pessoa ${contador} de ${pessoas} (M-Masculino | F-Feminino)?`).toUpperCase();
+        const idade = parseInt(prompt(`Qual a idade da pessoa ${contador} de ${pessoas}?`));
+        if (genero === "M") {
+            quantidadeHomens++;
+            somaIdadeHomens = somaIdadeHomens + idade;
+        }
+        else if (genero === "F") {
+            quantidadeMulheres = quantidadeMulheres + 1;
+            somaIdadeMulheres = somaIdadeMulheres + idade;
+        }
+        //Essas quatro linhas abaixo servem apenas para demonstrar como que funciona a estrutura de repetição. Na versão final, não é preciso (inclusive, nem deve aparecer...).
+        alert(`Quantidade de homens: ${quantidadeHomens}`);
+        alert(`Soma da Idade dos Homens: ${somaIdadeHomens}`);
+        alert(`Quantidade de mulheres: ${quantidadeMulheres}`);
+        alert(`Soma da Idade das Mulheres: ${somaIdadeMulheres}`);
+    }
+
+    const mediaIdadeHomens = somaIdadeHomens / quantidadeHomens;
+    const mediaIdadeMulheres = somaIdadeMulheres / quantidadeMulheres;
 
     //Saída
-
+    document.write(`Total de Mulheres: ${quantidadeMulheres} - Média de Idade: ${mediaIdadeMulheres.toFixed(2)}.<br/>`);
+    document.write(`Total de Homens: ${quantidadeHomens} - Média de Idade: ${mediaIdadeHomens.toFixed(2)}.`);
 </script>

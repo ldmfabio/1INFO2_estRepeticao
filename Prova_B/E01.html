@@ -12,8 +12,26 @@
 
 
     //Processamento
+    let maiorIdade = 0;
+    let menorIdade = 200;
+    let maiorPeso = 0;
 
-
+    for (let pessoas = 1; pessoas <= 5; pessoas++) {
+        let peso = parseFloat(prompt(`Informe o peso da pessoa ${pessoas} de 5:`));
+        let idade = parseInt(prompt(`Informe a idade da pessoa ${pessoas} de 5:`));
+        if (peso > maiorPeso) {
+            maiorPeso = peso;
+        }
+        if (idade > maiorIdade) {
+            maiorIdade = idade;
+        }
+        if (idade < menorIdade) {
+            menorIdade = idade;
+        }
+    }
+    
     //Saída
-
+    document.write(`A menor idade é ${menorIdade}.<br/>`);
+    document.write(`A maior idade é ${maiorIdade}.<br/>`);
+    document.write(`O maior peso é ${maiorPeso}.`);
 </script>

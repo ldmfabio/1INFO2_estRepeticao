@@ -8,11 +8,18 @@
     */
 
     //Entrada
-
+    const totalTomates = 25;
 
     //Processamento
+    let clientes = 0;
+    let tomatesVendidos = 0;
 
+    for (clientes = 0; tomatesVendidos < totalTomates; clientes = clientes + 1) {
+        const vendido = Number(prompt(`Quantos Kgs de Tomate o cliente comprou?`));
+        tomatesVendidos = tomatesVendidos + vendido;
+        alert(`Foram vendidos ${tomatesVendidos} Kgs de Tomate!`);
+    }
 
     //Saída
-    
+    document.write(`${clientes} clientes conseguiram comprar Tomate.`);
 </script>

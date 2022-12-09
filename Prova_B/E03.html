@@ -7,11 +7,32 @@
     */
 
     //Entrada
-
+    let votosCand_1 = 0;
+    let votosCand_2 = 0;
+    let votosCand_3 = 0;
 
     //Processamento
-
-
+    for (let eleitor = 1; eleitor <= 20; eleitor++) {
+        let voto = parseInt(prompt(`Informe o número do seu candidato (1 | 2 | 3):`));
+        if (voto === 1) votosCand_1++
+        else if (voto === 2) votosCand_2++
+        else votosCand_3++;
+    }
+    if (votosCand_1 > votosCand_2 && votosCand_1 > votosCand_3) {
+        let porcCand1 = votosCand_1 / 20 * 100;
+        document.write(`O ganhador é o Candidato 1, com ${porcCand1.toFixed(2)}% de votos.`);
+    }
+    else if (votosCand_2 > votosCand_1 && votosCand_2 > votosCand_3) {
+        let porcCand2 = votosCand_2 / 20 * 100;
+        document.write(`O ganhador é o Candidato 2, com ${porcCand2.toFixed(2)}% de votos.`);
+    }
+    else if (votosCand_3 > votosCand_1 && votosCand_3 > votosCand_2) {
+        let porcCand3 = votosCand_3 / 20 * 100;
+        document.write(`O ganhador é o Candidato 3, com ${porcCand3.toFixed(2)}% de votos.`);
+    }
+    else {
+        document.write(`Refaça a eleição, pois há candidatos com a mesma quantidade de votos!`);
+    }
     //Saída
 
 </script>

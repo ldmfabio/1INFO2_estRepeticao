@@ -2,17 +2,32 @@
 <script>
     //Problema: Caminhoneiro
     /*
-    Considere que um caminhoneiro fará uma viagem longa para transporte de carga, com distância de 2000 Km.
+    Considere que um caminhoneiro fará uma viagem longa para transporte de carga, com distância de 600 Km.
     Peça para que o caminhoneiro informe, em cada parada, quantos Kms percorreu. Também peça para informar quantos litros de Óleo Diesel foram colocados no caminhão.
-    Ao final do programa, apresente quantas paradas o caminhoneiro fez e também quantos litros de Óleo Diesel foi utilizado para percorrer todo o percurso previsto.
+    Ao final do programa, apresente quantas paradas o caminhoneiro fez e também quantos litros de Óleo Diesel foram utilizados para percorrer todo o percurso previsto.
     */
 
     //Entrada
-
+    const distanciaTotal = 600;
 
     //Processamento
+    let paradas = 0;
+    let litrosOleoDiesel = 0;
+    let distanciaPercorrida = 0;
 
+    for (paradas = 0; distanciaPercorrida < distanciaTotal; paradas++) {
+        const abastecido = parseFloat(prompt(`Quantos litros foram abastecidos?`));
+        const faltaPercorrer = distanciaTotal - distanciaPercorrida;
+        const distancia = Number(prompt(`Qual a distância percorrida? (Faltam ${faltaPercorrer} Kms.)`));
+
+        litrosOleoDiesel = litrosOleoDiesel + abastecido;
+        distanciaPercorrida = distanciaPercorrida + distancia;
+
+        alert(`Litros de Óleo Diesel consumidos: ${litrosOleoDiesel}`);
+        alert(`Distância Percorrida: ${distanciaPercorrida}`);
+    }
 
     //Saída
-
+    document.write(`Foram realizadas ${paradas} paradas!<br/>`);
+    document.write(`Foram consumidos ${litrosOleoDiesel} litros de Óleo Diesel!`);
 </script>

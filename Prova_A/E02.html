@@ -8,11 +8,17 @@
     */
 
     //Entrada
-
+    const totalCombustivel = 400;
 
     //Processamento
+    let carrosAbastecidos = 0;
+    let combustivelVendido = 0;
 
+    for (carrosAbastecidos = 0; combustivelVendido < totalCombustivel; carrosAbastecidos++) {
+        let abastecimento = Number(prompt(`Quantos litros deseja abastecer? (Restam ${(totalCombustivel - combustivelVendido)} litros)`));
+        combustivelVendido = combustivelVendido + abastecimento;
+    }
 
     //Saída
-
+    document.write(`${carrosAbastecidos} carros foram abastecidos!`);
 </script>
